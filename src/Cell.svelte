@@ -1,6 +1,9 @@
 <script>
   import Modal from './Modal.svelte';
-  export const activities = [];
+
+  export let day;
+  export let activities;
+
   let showModal = false;
 </script>
 
@@ -13,8 +16,12 @@
 
 {#if showModal}
   <Modal on:close="{() => (showModal = false)}">
-    <h2 slot="header">cell's date here</h2>
-    <p>field for remarks</p>
+    <h2 slot="header">{day}</h2>
+    {#each activities as activity}
+      <ul>
+        <li>{activity}</li>
+      </ul>
+    {/each}
   </Modal>
 {/if}
 

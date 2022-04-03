@@ -23,7 +23,9 @@
 <main>
   <h1>Hello {name}!</h1>
   ----
-  <Cell />
+  {#each activityLogs as log}
+    <Cell {...log} />
+  {/each}
 </main>
 
 <style>
