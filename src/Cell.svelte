@@ -1,10 +1,22 @@
 <script>
+  import Modal from './Modal.svelte';
   export const activities = [];
+  let showModal = false;
 </script>
 
 <div class="container">
-  <div class="cell"></div>
+  <div
+    class="cell"
+    on:click="{() => (showModal = true)}"
+  ></div>
 </div>
+
+{#if showModal}
+  <Modal on:close="{() => (showModal = false)}">
+    <h2 slot="header">cell's date here</h2>
+    <p>field for remarks</p>
+  </Modal>
+{/if}
 
 <style>
   .container {

@@ -52,9 +52,7 @@
   bind:this="{modal}"
 >
   <slot name="header" />
-  <hr />
   <slot />
-  <hr />
 </div>
 
 <style>
@@ -79,5 +77,6 @@
     padding: 1em;
     border-radius: 0.2em;
     background: whitesmoke;
+    text-align: left;
   }
 </style>

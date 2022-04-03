@@ -1,7 +1,23 @@
 <script>
   import Cell from './Cell.svelte';
+  import { getActivityLogs } from './Data';
 
   export let name = 'world';
+
+  /**
+   we want to make visible the past X months up to today
+  
+   assuming that we retrieve data.activityLogs with 
+    the most recent days first,
+
+    create an array of objects that have a day and a list of actions
+
+   -> show a cell for each day that has
+   *  passed since data.settings.trackingSince
+   *
+   */
+  const activityLogs = getActivityLogs();
+  console.log(activityLogs);
 </script>
 
 <main>
